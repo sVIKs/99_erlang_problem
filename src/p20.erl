@@ -1,5 +1,5 @@
--module(p20).
--export([remove_at/2]).
+-module(p21).
+-export([delete/3]).
 
-remove_at([_H|T],1) -> T;
-remove_at([H|T],Num) -> [H | remove_at(T,Num-1)].
+delete(Element, List, 1) -> [Element | List];
+delete(Element, [H|T], Num) -> [H | delete(Element, T, Num-1)].
