@@ -2,7 +2,7 @@
 -export([split/2]).
 
 split(List, Num) -> split(List,Num,[]).
-split([_H | T],0,List1) -> [reverse(List1) , T];
+split(List1,0,List2) -> [reverse(List2) , List1];
 split([H | T],Num,List1) -> split(T,Num-1,[H|List1]).
 
 reverse(List) -> reverse(List, []).
